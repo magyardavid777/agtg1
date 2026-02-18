@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team AGTG</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Barlow+Condensed:wght@400;500;600;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-logo">AGTG</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-text">LOADING TEAM DATA...</div>
+</div>
+
+<div class="noise-overlay"></div>
+
+<!-- MAP BLUEPRINT LAYER -->
+<div class="map-blueprint-layer" id="mapBlueprintLayer">
+  <!-- MIRAGE -->
+  <svg class="map-mirage-svg parallax-far" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#5fa9ff" stroke-width="1.2" fill="none">
+      <!-- T Spawn -->
+      <rect x="30" y="400" width="120" height="100"/>
+      <rect x="50" y="420" width="80" height="60"/>
+      <line x1="30" y1="450" x2="150" y2="450"/>
+      <!-- Mid -->
+      <rect x="280" y="240" width="240" height="120"/>
+      <rect x="300" y="260" width="60" height="40"/>
+      <rect x="460" y="260" width="40" height="40"/>
+      <line x1="280" y1="300" x2="520" y2="300"/>
+      <!-- A Site -->
+      <rect x="580" y="80" width="180" height="150"/>
+      <rect x="600" y="100" width="60" height="60"/>
+      <rect x="700" y="100" width="40" height="80"/>
+      <line x1="580" y1="155" x2="760" y2="155"/>
+      <!-- B Site -->
+      <rect x="40" y="60" width="160" height="140"/>
+      <rect x="60" y="80" width="50" height="50"/>
+      <rect x="160" y="80" width="20" height="80"/>
+      <!-- A Ramp -->
+      <path d="M150 400 L280 300 L580 230 L580 80"/>
+      <!-- Mid to B -->
+      <path d="M280 240 L200 200 L40 200"/>
+      <!-- CT -->
+      <rect x="580" y="300" width="180" height="120"/>
+      <rect x="600" y="320" width="40" height="40"/>
+      <!-- Connectors -->
+      <line x1="200" y1="60" x2="580" y2="80"/>
+      <line x1="760" y1="230" x2="760" y2="300"/>
+      <line x1="580" y1="420" x2="150" y2="500"/>
+      <!-- Boxes -->
+      <rect x="320" y="270" width="25" height="20"/>
+      <rect x="400" y="270" width="20" height="20"/>
+      <rect x="620" y="110" width="18" height="18"/>
+      <rect x="660" y="130" width="15" height="15"/>
+    </g>
+  </svg>
+
+  <!-- INFERNO -->
+  <svg class="map-inferno-svg parallax-mid" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#5fa9ff" stroke-width="1.2" fill="none">
+      <!-- T Spawn -->
+      <rect x="600" y="420" width="140" height="120"/>
+      <line x1="600" y1="480" x2="740" y2="480"/>
+      <!-- A Site -->
+      <rect x="50" y="50" width="200" height="180"/>
+      <rect x="70" y="70" width="70" height="60"/>
+      <rect x="200" y="70" width="30" height="80"/>
+      <line x1="50" y1="140" x2="250" y2="140"/>
+      <!-- B Site -->
+      <rect x="500" y="50" width="180" height="160"/>
+      <rect x="520" y="70" width="50" height="50"/>
+      <rect x="630" y="70" width="30" height="70"/>
+      <!-- Mid -->
+      <path d="M250 140 L380 200 L500 140"/>
+      <rect x="340" y="170" width="80" height="60"/>
+      <!-- Banana -->
+      <path d="M600 480 L500 420 L500 210"/>
+      <!-- A Long -->
+      <path d="M250 230 L250 420 L600 420"/>
+      <!-- CT -->
+      <rect x="250" y="270" width="260" height="100"/>
+      <rect x="270" y="290" width="50" height="40"/>
+      <!-- Arch -->
+      <path d="M370 230 C370 200 420 200 420 230"/>
+      <!-- Details -->
+      <rect x="100" y="150" width="20" height="20"/>
+      <rect x="550" y="100" width="18" height="18"/>
+      <rect x="360" y="185" width="22" height="15"/>
+    </g>
+  </svg>
+
+  <!-- DUST2 -->
+  <svg class="map-dust2-svg parallax-far" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#7fd3ff" stroke-width="1" fill="none">
+      <!-- T Spawn -->
+      <rect x="320" y="460" width="160" height="100"/>
+      <line x1="320" y1="510" x2="480" y2="510"/>
+      <!-- A Site -->
+      <rect x="560" y="60" width="200" height="180"/>
+      <rect x="580" y="80" width="60" height="60"/>
+      <rect x="700" y="80" width="40" height="80"/>
+      <line x1="560" y1="150" x2="760" y2="150"/>
+      <!-- B Site -->
+      <rect x="40" y="60" width="180" height="160"/>
+      <rect x="60" y="80" width="50" height="60"/>
+      <rect x="175" y="80" width="25" height="80"/>
+      <!-- Long A -->
+      <path d="M480 460 L560 380 L560 240"/>
+      <!-- Short A / Catwalk -->
+      <path d="M480 460 L420 360 L560 240"/>
+      <!-- Mid -->
+      <rect x="280" y="220" width="200" height="80"/>
+      <line x1="280" y1="260" x2="480" y2="260"/>
+      <!-- B Tunnels -->
+      <path d="M320 460 L220 380 L220 220 L40 220"/>
+      <!-- CT Spawn -->
+      <rect x="560" y="280" width="200" height="120"/>
+      <rect x="580" y="300" width="50" height="40"/>
+      <!-- Details -->
+      <rect x="610" y="90" width="20" height="20"/>
+      <rect x="650" y="110" width="15" height="15"/>
+      <rect x="80" y="90" width="20" height="20"/>
+      <rect x="300" y="235" width="20" height="18"/>
+      <rect x="380" y="235" width="18" height="18"/>
+    </g>
+  </svg>
+</div>
+
+<!-- HEXAGON GRID -->
+<div class="hex-grid-layer parallax-far" id="hexGrid"></div>
+
+<!-- LIGHT RAYS -->
+<div class="light-rays-layer">
+  <div class="light-ray"></div>
+  <div class="light-ray"></div>
+  <div class="light-ray"></div>
+  <div class="light-ray"></div>
+  <div class="light-ray"></div>
+  <div class="light-ray"></div>
+</div>
+
+<!-- FLOATING ELEMENTS -->
+<div class="floating-elements-layer" id="floatingLayer">
+  <div class="float-el">● RATING 1.17</div>
+  <div class="float-el">◈ WIN RATE 71%</div>
+  <div class="float-el">▸ MIRAGE 82%</div>
+  <div class="float-el">◉ K/D 1.24</div>
+  <div class="float-el">⬡ INFERNO 75%</div>
+  <div class="float-el">◈ HS% 58%</div>
+</div>
+
+<!-- PLAYER MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="player-modal" id="playerModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-header">
+      <div class="modal-avatar" id="modalAvatar"></div>
+      <div class="modal-header-info">
+        <div class="modal-badge-wrap"><span class="modal-badge" id="modalBadge">IGL</span></div>
+        <h2 id="modalName">AMIX</h2>
+        <span id="modalRole">In-Game Leader</span>
+        <div class="modal-country">🇭🇺 Hungary</div>
+      </div>
+    </div>
+    <div class="modal-stats">
+      <div class="modal-stat"><span class="modal-stat-val" id="mRating">1.17</span><span class="modal-stat-lbl">Rating</span></div>
+      <div class="modal-stat"><span class="modal-stat-val" id="mKD">1.25</span><span class="modal-stat-lbl">K/D</span></div>
+      <div class="modal-stat"><span class="modal-stat-val" id="mHS">54%</span><span class="modal-stat-lbl">HS%</span></div>
+      <div class="modal-stat"><span class="modal-stat-val" id="mADR">82</span><span class="modal-stat-lbl">ADR</span></div>
+    </div>
+    <div class="modal-bio" id="modalBio">One of the most cerebral IGLs in the Hungarian scene. Known for creative strats and clutch decision-making under pressure.</div>
+    <div class="modal-maps">
+      <div class="modal-maps-title">BEST MAPS</div>
+      <div class="modal-map-tags" id="modalMaps"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIVE TICKER -->
+<div class="live-ticker">
+  <div class="ticker-label">● LIVE</div>
+  <div class="ticker-track">
+    <div class="ticker-content" id="tickerContent"></div>
+  </div>
+  <div class="ticker-right">
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light mode">
+      <span class="theme-icon" id="themeIcon">☀</span>
+    </button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+    <div class="logo"><span class="logo-bracket">[</span>AGTG<span class="logo-bracket">]</span></div>
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#stats">Stats</a>
+        <a href="#news">News</a>
+        <a href="#roster">Roster</a>
+        <a href="#matches">Matches</a>
+        <a href="#maps">Maps</a>
+        <a href="#trophies">Trophies</a>
+        <a href="#gallery">Gallery</a>
+    </nav>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    <a href="#" class="join-btn">Join Us</a>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-scanlines"></div>
+  <div class="hero-particles" id="heroParticles"></div>
+    <div class="container hero-content">
+        <div class="hero-tag reveal-up">— EST. 2026 — HUNGARY —</div>
+        <h1 class="reveal-up delay-1">Team AGTG</h1>
+        <h2 class="reveal-up delay-2">BUILT FOR COMPETITION</h2>
+        <p class="reveal-up delay-3">Professional Counter-Strike 2 roster from Hungary</p>
+        <div class="hero-buttons reveal-up delay-4">
+            <a href="#matches" class="btn primary">Watch Matches</a>
+            <a href="#roster" class="btn outline">Roster</a>
+            <a href="#" class="btn outline">Shop</a>
+        </div>
+        <div class="hero-stats reveal-up delay-5">
+          <div class="hero-stat-item">
+            <span class="hero-stat-num" data-target="38">0</span>
+            <span class="hero-stat-label">Matches Played</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-num" data-target="71">0</span><span class="hero-stat-suffix">%</span>
+            <span class="hero-stat-label">Win Rate</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat-item">
+            <span class="hero-stat-num" data-target="5">0</span>
+            <span class="hero-stat-label">Active Players</span>
+          </div>
+        </div>
+        <div class="countdown-box reveal-up delay-5">
+          <div class="countdown-label">⚡ NEXT MATCH — NaVi vs AGTG — JUN 14 20:00 CET</div>
+          <div class="countdown-timer">
+            <div class="cd-unit"><span id="cdDays">00</span><small>DAYS</small></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-unit"><span id="cdHours">00</span><small>HRS</small></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-unit"><span id="cdMins">00</span><small>MIN</small></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-unit"><span id="cdSecs">00</span><small>SEC</small></div>
+          </div>
+        </div>
+    </div>
+    <div class="hero-scroll-hint"><span>SCROLL</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- HERO SLASH -->
+<div class="hero-slash"></div>
+
+<!-- ABOUT -->
+<section id="about" class="about-section reveal-section">
+    <div class="container">
+        <div class="about-glass">
+            <div class="about-left">
+                <h2 class="section-title">ABOUT AGTG</h2>
+                <p>Team AGTG was founded in 2026 with one mission: compete at the highest level while representing discipline, faith and excellence in esports.</p>
+            </div>
+            <div class="about-right">
+                <div class="about-stat"><h3>Mission</h3><p>Compete globally while maintaining integrity and unity.</p></div>
+                <div class="about-stat"><h3>Vision</h3><p>Become a recognized European CS2 powerhouse.</p></div>
+                <div class="about-stat"><h3>Values</h3><p>Discipline • Strategy • Honor • Growth</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="smoke-divider"></div>
+
+<!-- SPONSORS -->
+<section class="sponsors-section reveal-section">
+  <div class="container">
+    <div class="sponsors-label">TRUSTED PARTNERS</div>
+    <div class="sponsors-grid">
+      <div class="sponsor-card"><img src="assets/sponsors/intel.png" alt="Intel"><span>Intel</span></div>
+      <div class="sponsor-card"><img src="assets/sponsors/rog.png" alt="ROG"><span>ASUS ROG</span></div>
+      <div class="sponsor-card"><img src="assets/sponsors/steelseries.png" alt="SteelSeries"><span>SteelSeries</span></div>
+      <div class="sponsor-card"><img src="assets/sponsors/faceit.png" alt="FACEIT"><span>FACEIT</span></div>
+      <div class="sponsor-card"><img src="assets/sponsors/esl.png" alt="ESL"><span>ESL</span></div>
+    </div>
+  </div>
+</section>
+<div class="smoke-divider"></div>
+
+<!-- STATS -->
+<section id="stats" class="section stats-section reveal-section">
+  <div class="container">
+    <h2 class="section-title">TEAM STATISTICS</h2>
+    <div class="stats-grid">
+      <div class="stat-card reveal-up">
+        <div class="stat-card-header"><span class="stat-icon">🎯</span><span class="stat-label">Overall Rating</span></div>
+        <div class="stat-value" data-target="1.12">0.00</div>
+        <div class="stat-bar-wrap"><div class="stat-bar" data-width="74"></div></div>
+        <p class="stat-desc">Average team rating across all matches</p>
+      </div>
+      <div class="stat-card reveal-up delay-1">
+        <div class="stat-card-header"><span class="stat-icon">💀</span><span class="stat-label">K/D Ratio</span></div>
+        <div class="stat-value" data-target="1.24">0.00</div>
+        <div class="stat-bar-wrap"><div class="stat-bar" data-width="82"></div></div>
+        <p class="stat-desc">Kill/Death ratio — top 15% in region</p>
+      </div>
+      <div class="stat-card reveal-up delay-2">
+        <div class="stat-card-header"><span class="stat-icon">🏆</span><span class="stat-label">Win Rate</span></div>
+        <div class="stat-value" data-target="71">0</div><span class="stat-unit">%</span>
+        <div class="stat-bar-wrap"><div class="stat-bar" data-width="71"></div></div>
+        <p class="stat-desc">Across 38 competitive matches played</p>
+      </div>
+      <div class="stat-card reveal-up delay-3">
+        <div class="stat-card-header"><span class="stat-icon">💣</span><span class="stat-label">Headshot %</span></div>
+        <div class="stat-value" data-target="58">0</div><span class="stat-unit">%</span>
+        <div class="stat-bar-wrap"><div class="stat-bar" data-width="58"></div></div>
+        <p class="stat-desc">Precision above the European average</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="smoke-divider"></div>
+
+<!-- NEWS -->
+<section id="news" class="section reveal-section">
+<div class="container">
+    <h2 class="section-title">LATEST NEWS</h2>
+    <div class="news-grid">
+        <div class="news-card reveal-up">
+            <div class="news-top blue"><div class="news-category-tag">MATCH RECAP</div></div>
+            <div class="news-content">
+                <h3>Our First LAN Victory!</h3>
+                <p class="news-date">June 10, 2026</p>
+                <p class="news-excerpt">A historic moment for Team AGTG as we dominated the field and secured our first offline trophy.</p>
+                <button class="btn outline small">Read More</button>
+            </div>
+        </div>
+        <div class="news-card reveal-up delay-1">
+            <div class="news-top purple"><div class="news-category-tag">TACTICAL</div></div>
+            <div class="news-content">
+                <h3>Mirage CT Strategies</h3>
+                <p class="news-date">June 8, 2026</p>
+                <p class="news-excerpt">Breaking down our coach's winning CT-side setups that helped us hold through three overtime rounds.</p>
+                <button class="btn outline small">Read More</button>
+            </div>
+        </div>
+        <div class="news-card reveal-up delay-2">
+            <div class="news-top cyan"><div class="news-category-tag">ANNOUNCEMENT</div></div>
+            <div class="news-content">
+                <h3>New Player Joins Team AGTG</h3>
+                <p class="news-date">June 5, 2026</p>
+                <p class="news-excerpt">We are thrilled to announce the newest addition to our roster — a player that changes everything.</p>
+                <button class="btn outline small">Read More</button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- ROSTER + MATCHES -->
+<section class="section reveal-section">
+<div class="container main-flex">
+    <div id="roster" class="roster-section">
+        <h2 class="section-title">ROSTER</h2>
+        <div class="roster-slider">
+            <div class="player-card reveal-up" data-player="amix">
+                <div class="player-image"><img src="assets/players/amix.png" alt="AMIX"></div>
+                <div class="player-badge">IGL</div>
+                <div class="player-info">
+                    <h3>AMIX</h3><span>In-Game Leader</span>
+                    <div class="player-rating-row"><span class="rating-label">Rating</span><span class="rating-val">1.17</span></div>
+                    <div class="player-stat-bar"><div class="player-stat-fill" data-width="78"></div></div>
+                </div>
+                <div class="player-card-hint">Click for profile</div>
+            </div>
+            <div class="player-card reveal-up delay-1" data-player="dryvyx">
+                <div class="player-image"><img src="assets/players/dryvyx.png" alt="DRYVYX"></div>
+                <div class="player-badge awp">AWP</div>
+                <div class="player-info">
+                    <h3>DRYVYX</h3><span>AWPer</span>
+                    <div class="player-rating-row"><span class="rating-label">Rating</span><span class="rating-val">1.09</span></div>
+                    <div class="player-stat-bar"><div class="player-stat-fill" data-width="72"></div></div>
+                </div>
+                <div class="player-card-hint">Click for profile</div>
+            </div>
+            <div class="player-card reveal-up delay-2" data-player="cickany">
+                <div class="player-image"><img src="assets/players/belta.png" alt="CICKÁNY"></div>
+                <div class="player-badge entry">ENTRY</div>
+                <div class="player-info">
+                    <h3>CICKÁNY</h3><span>Entry Fragger</span>
+                    <div class="player-rating-row"><span class="rating-label">Rating</span><span class="rating-val">1.10</span></div>
+                    <div class="player-stat-bar"><div class="player-stat-fill" data-width="73"></div></div>
+                </div>
+                <div class="player-card-hint">Click for profile</div>
+            </div>
+        </div>
+    </div>
+    <div id="matches" class="matches-section">
+        <h2 class="section-title">MATCHES</h2>
+        <div class="match-card live-match reveal-up">
+            <div class="match-teams">
+              <div class="match-team"><span class="team-name">FAZE</span></div>
+              <div class="match-vs"><span>VS</span><div class="match-score">11 : 9</div></div>
+              <div class="match-team right"><span class="team-name agtg">AGTG</span></div>
+            </div>
+            <div class="match-meta"><span>JUN 12 — 19:00 CET</span><span class="live">● LIVE</span></div>
+        </div>
+        <div class="match-card reveal-up delay-1">
+            <div class="match-teams">
+              <div class="match-team"><span class="team-name">NaVi</span></div>
+              <div class="match-vs"><span>VS</span></div>
+              <div class="match-team right"><span class="team-name agtg">AGTG</span></div>
+            </div>
+            <div class="match-meta"><span>JUN 14 — 20:00 CET</span><span class="upcoming">UPCOMING</span></div>
+        </div>
+        <div class="match-card past reveal-up delay-2">
+            <div class="match-teams">
+              <div class="match-team"><span class="team-name">Vitality</span></div>
+              <div class="match-vs"><span>VS</span><div class="match-score muted">13 : 8</div></div>
+              <div class="match-team right"><span class="team-name agtg">AGTG</span></div>
+            </div>
+            <div class="match-meta"><span>JUN 9 — 18:00 CET</span><span class="result win">WIN</span></div>
+        </div>
+        <div class="match-card past reveal-up delay-3">
+            <div class="match-teams">
+              <div class="match-team"><span class="team-name">G2</span></div>
+              <div class="match-vs"><span>VS</span><div class="match-score muted">10 : 13</div></div>
+              <div class="match-team right"><span class="team-name agtg">AGTG</span></div>
+            </div>
+            <div class="match-meta"><span>JUN 6 — 17:00 CET</span><span class="result loss">LOSS</span></div>
+        </div>
+    </div>
+</div>
+</section>
+<div class="smoke-divider"></div>
+
+<!-- MAP POOL -->
+<section id="maps" class="section reveal-section">
+  <div class="container">
+    <h2 class="section-title">MAP POOL</h2>
+    <div class="map-grid">
+      <div class="map-card reveal-up">
+        <div class="map-bg map-mirage"></div>
+        <div class="map-info"><span class="map-name">MIRAGE</span>
+          <div class="map-winrate-row"><div class="map-bar-wrap"><div class="map-bar" data-width="82"></div></div><span class="map-pct">82%</span></div>
+          <span class="map-games">11 games</span></div>
+      </div>
+      <div class="map-card reveal-up delay-1">
+        <div class="map-bg map-inferno"></div>
+        <div class="map-info"><span class="map-name">INFERNO</span>
+          <div class="map-winrate-row"><div class="map-bar-wrap"><div class="map-bar" data-width="75"></div></div><span class="map-pct">75%</span></div>
+          <span class="map-games">8 games</span></div>
+      </div>
+      <div class="map-card reveal-up delay-2">
+        <div class="map-bg map-nuke"></div>
+        <div class="map-info"><span class="map-name">NUKE</span>
+          <div class="map-winrate-row"><div class="map-bar-wrap"><div class="map-bar" data-width="67"></div></div><span class="map-pct">67%</span></div>
+          <span class="map-games">6 games</span></div>
+      </div>
+      <div class="map-card reveal-up delay-3">
+        <div class="map-bg map-ancient"></div>
+        <div class="map-info"><span class="map-name">ANCIENT</span>
+          <div class="map-winrate-row"><div class="map-bar-wrap"><div class="map-bar" data-width="60"></div></div><span class="map-pct">60%</span></div>
+          <span class="map-games">5 games</span></div>
+      </div>
+      <div class="map-card reveal-up delay-4">
+        <div class="map-bg map-anubis"></div>
+        <div class="map-info"><span class="map-name">ANUBIS</span>
+          <div class="map-winrate-row"><div class="map-bar-wrap"><div class="map-bar" data-width="50"></div></div><span class="map-pct">50%</span></div>
+          <span class="map-games">4 games</span></div>
+      </div>
+      <div class="map-card ban reveal-up delay-5">
+        <div class="map-bg map-dust2"></div>
+        <div class="map-ban-overlay">BAN</div>
+        <div class="map-info"><span class="map-name">DUST II</span>
+          <div class="map-winrate-row"><div class="map-bar-wrap"><div class="map-bar ban-bar" data-width="33"></div></div><span class="map-pct muted">33%</span></div>
+          <span class="map-games">3 games</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="smoke-divider"></div>
+
+<!-- TROPHIES -->
+<section id="trophies" class="section trophies-section reveal-section">
+  <div class="container">
+    <h2 class="section-title">TROPHY CASE</h2>
+    <div class="trophies-grid">
+      <div class="trophy-card gold reveal-up">
+        <div class="trophy-icon">🏆</div>
+        <div class="trophy-info">
+          <span class="trophy-place">1st Place</span>
+          <h3>Budapest Open 2026</h3>
+          <p>Regional LAN Tournament</p>
+          <span class="trophy-date">June 2026</span>
+        </div>
+        <div class="trophy-glow"></div>
+      </div>
+      <div class="trophy-card silver reveal-up delay-1">
+        <div class="trophy-icon">🥈</div>
+        <div class="trophy-info">
+          <span class="trophy-place">2nd Place</span>
+          <h3>FACEIT EU Qualifier</h3>
+          <p>Online Qualifier Tournament</p>
+          <span class="trophy-date">May 2026</span>
+        </div>
+        <div class="trophy-glow"></div>
+      </div>
+      <div class="trophy-card bronze reveal-up delay-2">
+        <div class="trophy-icon">🥉</div>
+        <div class="trophy-info">
+          <span class="trophy-place">3rd Place</span>
+          <h3>ESL Challenger Cup</h3>
+          <p>European Open Series</p>
+          <span class="trophy-date">April 2026</span>
+        </div>
+        <div class="trophy-glow"></div>
+      </div>
+      <div class="trophy-card special reveal-up delay-3">
+        <div class="trophy-icon">⭐</div>
+        <div class="trophy-info">
+          <span class="trophy-place">MVP Award</span>
+          <h3>AMIX — Budapest Open</h3>
+          <p>Best IGL of the Tournament</p>
+          <span class="trophy-date">June 2026</span>
+        </div>
+        <div class="trophy-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="smoke-divider"></div>
+
+<!-- GALLERY -->
+<section id="gallery" class="section gallery-section reveal-section">
+  <div class="container">
+    <h2 class="section-title">GALLERY</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item large reveal-up">
+        <div class="gallery-placeholder g1"><span>LAN Event — Budapest 2026</span></div>
+        <div class="gallery-overlay"><span>LAN Victory</span></div>
+      </div>
+      <div class="gallery-item reveal-up delay-1">
+        <div class="gallery-placeholder g2"><span>Team Photo</span></div>
+        <div class="gallery-overlay"><span>Team Lineup</span></div>
+      </div>
+      <div class="gallery-item reveal-up delay-2">
+        <div class="gallery-placeholder g3"><span>Practice Session</span></div>
+        <div class="gallery-overlay"><span>Boot Camp</span></div>
+      </div>
+      <div class="gallery-item reveal-up delay-3">
+        <div class="gallery-placeholder g4"><span>Trophy Lift</span></div>
+        <div class="gallery-overlay"><span>Champions</span></div>
+      </div>
+      <div class="gallery-item reveal-up delay-4">
+        <div class="gallery-placeholder g5"><span>Press Conference</span></div>
+        <div class="gallery-overlay"><span>Media Day</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter reveal-section">
+    <div class="container newsletter-box">
+        <div class="newsletter-icon">✉</div>
+        <h2>Join The AGTG Community</h2>
+        <p>Get updates about matches, roster changes and exclusive content.</p>
+        <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email" id="emailInput">
+            <button type="submit">Subscribe</button>
+        </form>
+        <div class="newsletter-success" id="newsletterSuccess">🎉 You're in! Welcome to the AGTG family.</div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top-glow"></div>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-bracket">[</span>AGTG<span class="logo-bracket">]</span></div>
+        <p class="footer-tagline">Built for competition.<br>Forged in Hungary.</p>
+        <div class="social-links">
+          <a href="#" class="social-btn" title="Twitter">𝕏</a>
+          <a href="#" class="social-btn" title="Discord">DC</a>
+          <a href="#" class="social-btn" title="YouTube">YT</a>
+          <a href="#" class="social-btn" title="Instagram">IG</a>
+          <a href="#" class="social-btn" title="Twitch">TV</a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Navigate</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#stats">Statistics</a>
+        <a href="#news">News</a>
+        <a href="#roster">Roster</a>
+        <a href="#maps">Map Pool</a>
+        <a href="#trophies">Trophies</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+      <div class="footer-links-col">
+        <h4>Organization</h4>
+        <p>Founded: 2026</p>
+        <p>Region: Hungary / EU</p>
+        <p>Game: Counter-Strike 2</p>
+        <p>Platform: FACEIT / ESL</p>
+      </div>
+      <div class="footer-links-col">
+        <h4>Contact</h4>
+        <a href="#"><span class="__cf_email__" data-cfemail="b4d9d5dad5d3d1d9d1dac0f4d5d3c0d39ad3d3">[email&#160;protected]</span></a>
+        <a href="#"><span class="__cf_email__" data-cfemail="0576756a6b766a7745646271622b6262">[email&#160;protected]</span></a>
+        <a href="#"><span class="__cf_email__" data-cfemail="ff8f8d9a8c8cbf9e988b98d19898">[email&#160;protected]</span></a>
+        <div class="footer-badge">🇭🇺 HU
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Team AGTG. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
