@@ -370,13 +370,13 @@
 <div class="container main-flex">
     <div id="roster" class="roster-section">
         <h2 class="section-title">ROSTER</h2>
-        <div class="roster-slider">
+        <div class="roster-slider" id="rosterSlider">
             <div class="player-card reveal-up" data-player="amix">
                 <div class="player-image"><img src="assets/players/amix.png" alt="AMIX"></div>
                 <div class="player-badge">IGL</div>
                 <div class="player-info">
                     <h3>AMIX</h3><span>In-Game Leader</span>
-                    <div class="player-rating-row"><span class="rating-label">Rating</span><span class="rating-val">1.17</span></div>
+                    <div class="player-rating-row"><span class="rating-label">RATING</span><span class="rating-val">1.17</span></div>
                     <div class="player-stat-bar"><div class="player-stat-fill" data-width="78"></div></div>
                 </div>
                 <div class="player-card-hint">Click for profile</div>
@@ -386,21 +386,46 @@
                 <div class="player-badge awp">AWP</div>
                 <div class="player-info">
                     <h3>DRYVYX</h3><span>AWPer</span>
-                    <div class="player-rating-row"><span class="rating-label">Rating</span><span class="rating-val">1.09</span></div>
+                    <div class="player-rating-row"><span class="rating-label">RATING</span><span class="rating-val">1.09</span></div>
                     <div class="player-stat-bar"><div class="player-stat-fill" data-width="72"></div></div>
                 </div>
                 <div class="player-card-hint">Click for profile</div>
             </div>
-            <div class="player-card reveal-up delay-2" data-player="cickany">
+            <div class="player-card reveal-up delay-2" data-player="belta">
                 <div class="player-image"><img src="assets/players/belta.png" alt="CICKÁNY"></div>
                 <div class="player-badge entry">ENTRY</div>
                 <div class="player-info">
-                    <h3>CICKÁNY</h3><span>Entry Fragger</span>
-                    <div class="player-rating-row"><span class="rating-label">Rating</span><span class="rating-val">1.10</span></div>
+                    <h3>BETA</h3><span>Entry Fragger</span>
+                    <div class="player-rating-row"><span class="rating-label">RATING</span><span class="rating-val">1.10</span></div>
                     <div class="player-stat-bar"><div class="player-stat-fill" data-width="73"></div></div>
                 </div>
                 <div class="player-card-hint">Click for profile</div>
             </div>
+            <div class="player-card reveal-up delay-3" data-player="vortex">
+                <div class="player-image"><img src="assets/players/amix.png" alt="VORTEX"></div>
+                <div class="player-badge" style="background:rgba(0,200,100,.15);border-color:rgba(0,200,100,.4);color:#00c864">RIFLE</div>
+                <div class="player-info">
+                    <h3>VORTEX</h3><span>Rifler</span>
+                    <div class="player-rating-row"><span class="rating-label">RATING</span><span class="rating-val">1.14</span></div>
+                    <div class="player-stat-bar"><div class="player-stat-fill" data-width="76"></div></div>
+                </div>
+                <div class="player-card-hint">Click for profile</div>
+            </div>
+            <div class="player-card reveal-up delay-4" data-player="phantom">
+                <div class="player-image"><img src="assets/players/dryvyx.png" alt="PHANTOM"></div>
+                <div class="player-badge" style="background:rgba(255,150,0,.15);border-color:rgba(255,150,0,.4);color:#ff9600">LURK</div>
+                <div class="player-info">
+                    <h3>PHANTOM</h3><span>Lurker</span>
+                    <div class="player-rating-row"><span class="rating-label">RATING</span><span class="rating-val">1.06</span></div>
+                    <div class="player-stat-bar"><div class="player-stat-fill" data-width="70"></div></div>
+                </div>
+                <div class="player-card-hint">Click for profile</div>
+            </div>
+        </div>
+        <div class="roster-nav">
+          <button class="roster-prev" id="rosterPrev">&#8592;</button>
+          <div class="roster-dots" id="rosterDots"></div>
+          <button class="roster-next" id="rosterNext">&#8594;</button>
         </div>
     </div>
     <div id="matches" class="matches-section">
@@ -636,5 +661,265 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- ================= COOKIE SYSTEM ================= -->
+
+<div id="cookie-overlay" class="cookie-overlay">
+
+  <div id="cookie-modal" class="cookie-modal">
+
+    <h2>🍪 AGTG Cookie Control</h2>
+
+    <p class="cookie-text">
+      We use cookies to enhance performance, analytics and user experience.
+      You can choose which categories you allow. Essential cookies are always active.
+    </p>
+
+    <div class="cookie-options">
+
+      <label class="cookie-option">
+        <input type="checkbox" checked disabled>
+        <span>
+          <strong>Essential</strong>
+          <small>Required for core website functionality</small>
+        </span>
+      </label>
+
+      <label class="cookie-option">
+        <input type="checkbox" id="cookie-analytics">
+        <span>
+          <strong>Analytics</strong>
+          <small>Helps us understand site performance</small>
+        </span>
+      </label>
+
+      <label class="cookie-option">
+        <input type="checkbox" id="cookie-marketing">
+        <span>
+          <strong>Marketing</strong>
+          <small>Used for content and campaign optimization</small>
+        </span>
+      </label>
+
+    </div>
+
+    <div class="cookie-buttons">
+      <button id="cookie-accept">Accept All</button>
+      <button id="cookie-save">Save Preferences</button>
+      <button id="cookie-reject">Reject Optional</button>
+    </div>
+
+  </div>
+</div>
+
+<button id="cookie-settings" class="cookie-settings-btn">
+  ⚙ Cookies
+</button>
+
+<style>
+
+/* Overlay */
+.cookie-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal */
+.cookie-modal {
+  background: linear-gradient(145deg, #0c0c0c, #141414);
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 420px;
+  max-width: 92%;
+  box-shadow:
+    0 0 40px rgba(0,255,166,0.15),
+    0 0 80px rgba(0,255,166,0.08);
+  transform: translateY(40px);
+  opacity: 0;
+  animation: cookieSlide 0.5s ease forwards;
+  font-family: inherit;
+}
+
+@keyframes cookieSlide {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cookie-text {
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.cookie-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.cookie-option {
+  display: flex;
+  gap: 12px;
+  background: rgba(255,255,255,0.04);
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.cookie-option small {
+  display: block;
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+/* Buttons */
+.cookie-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-buttons button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+#cookie-accept {
+  background: #00a2ff;
+  color: black;
+}
+
+#cookie-accept:hover {
+  transform: scale(1.05);
+}
+
+#cookie-save {
+  background: #2a2a2a;
+  color: white;
+}
+
+#cookie-reject {
+  background: transparent;
+  border: 1px solid #555;
+  color: #aaa;
+}
+
+/* Floating settings button */
+.cookie-settings-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #00a2ff;
+  color: black;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(86, 221, 255, 0.3);
+  z-index: 9998;
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const overlay = document.getElementById("cookie-overlay");
+  const settingsBtn = document.getElementById("cookie-settings");
+
+  const acceptBtn = document.getElementById("cookie-accept");
+  const saveBtn = document.getElementById("cookie-save");
+  const rejectBtn = document.getElementById("cookie-reject");
+
+  const analyticsBox = document.getElementById("cookie-analytics");
+  const marketingBox = document.getElementById("cookie-marketing");
+
+  const stored = JSON.parse(localStorage.getItem("agtgCookieConsent"));
+
+  if (!stored) {
+    overlay.style.display = "flex";
+  } else {
+    applyConsent(stored);
+  }
+
+  function saveConsent(data) {
+    localStorage.setItem("agtgCookieConsent", JSON.stringify(data));
+    overlay.style.display = "none";
+    applyConsent(data);
+  }
+
+  acceptBtn.onclick = () => {
+    saveConsent({
+      essential: true,
+      analytics: true,
+      marketing: true
+    });
+  };
+
+  saveBtn.onclick = () => {
+    saveConsent({
+      essential: true,
+      analytics: analyticsBox.checked,
+      marketing: marketingBox.checked
+    });
+  };
+
+  rejectBtn.onclick = () => {
+    saveConsent({
+      essential: true,
+      analytics: false,
+      marketing: false
+    });
+  };
+
+  settingsBtn.onclick = () => {
+    overlay.style.display = "flex";
+  };
+
+  function applyConsent(data) {
+
+    console.log("Consent:", data);
+
+    // =============================
+    // GOOGLE ANALYTICS PÉLDA
+    // =============================
+
+    if (data.analytics) {
+
+      console.log("Analytics enabled");
+
+      // Ide jön később GA script
+      /*
+      let script = document.createElement("script");
+      script.src = "https://www.googletagmanager.com/gtag/js?id=GA_ID";
+      document.head.appendChild(script);
+      */
+
+    }
+
+    if (data.marketing) {
+      console.log("Marketing enabled");
+    }
+  }
+
+});
+</script>
+
+<!-- ================= END COOKIE ================= -->
+
 </body>
 </html>
